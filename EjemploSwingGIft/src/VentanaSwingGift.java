@@ -2,7 +2,11 @@ import java.awt.BorderLayout;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 import javax.swing.JPanel;
+import javax.swing.JTabbedPane;
 
 public class VentanaSwingGift extends JFrame {
 	
@@ -12,27 +16,37 @@ public class VentanaSwingGift extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel pNorte, pEste, pOeste, pCentro, pSur;
 	private JButton btnmdat, btnlimpiar, btnsalir;
+	private JTabbedPane panelPestanias;
+	private JMenuBar barraMenu;
+	private JMenu menuFichero;
+	private JMenuItem itemMostrar, itemLimpiar, itemSalir;
 	
 	public VentanaSwingGift() {
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setTitle("Ejemplo de Componentes Swing");
-		setBounds(600, 800, 600, 800);
-		setLocationRelativeTo(null);;
+		setSize(640, 840);
+		setLocationRelativeTo(null);
 		
+		barraMenu = new JMenuBar();
+		setJMenuBar(barraMenu);
 		
-		pNorte = new JPanel();
-		pEste = new JPanel();
-		pOeste = new JPanel();
-		pCentro = new JPanel();
+		menuFichero = new JMenu("Fichero");
+		barraMenu.add(menuFichero);
+		
+		itemMostrar = new JMenuItem("Mostrar");
+		menuFichero.add(itemMostrar);
+		itemLimpiar = new JMenuItem("Limpiar");
+		menuFichero.add(itemLimpiar);
+		itemSalir = new JMenuItem("Salir");
+		menuFichero.add(itemSalir);
+		
+		panelPestanias = new JTabbedPane();
+		add(panelPestanias, BorderLayout.CENTER);
+		
+		panelPestanias.addTab("Datos personales", new JPanel());
+		panelPestanias.add("Información", new JPanel());
+		panelPestanias.add("Comentarios", new JPanel());
 
-		btnmdat = new JButton("Mostrar Datos");
-		btnlimpiar = new JButton("Limpiar");
-		
-		getContentPane().add(pSur, BorderLayout.SOUTH);
-		
-		pSur.add(btnmdat);
-		pSur.add(btnlimpiar);
-		pSur.add(btnsalir);
-		
 		setVisible(true);
 	}
 	public static void main(String[] args) {
