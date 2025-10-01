@@ -35,8 +35,7 @@ public class VentanaSwingGift extends JFrame {
 		
 		itemMostrar = new JMenuItem("Mostrar");
 		menuFichero.add(itemMostrar);
-		itemLimpiar = new JMenuItem("Limpiar");
-		menuFichero.add(itemLimpiar);
+		
 		itemSalir = new JMenuItem("Exit");
 		menuFichero.add(itemSalir);
 		
@@ -54,4 +53,5 @@ public class VentanaSwingGift extends JFrame {
 	}
 
 }
+
 
